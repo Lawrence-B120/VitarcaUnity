@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 444}
   m_MaxSize: {x: 22012, y: 10022}
   vertical: 0
-  controlID: 98
+  controlID: 15
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 444}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 99
+  controlID: 16
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -584,7 +584,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 62ebffff
+      m_ExpandedIDs: 8cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -646,20 +646,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/ObjectArt
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/ObjectArt
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\lawre\Documents\GitHub\VitarcaUnity\Vitarca
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 48370000
-    m_LastClickedID: 14152
-    m_ExpandedIDs: 000000004837000000ca9a3b
+    m_SelectedIDs: 922c0000
+    m_LastClickedID: 11410
+    m_ExpandedIDs: 0000000056290000662c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -687,7 +687,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 0000000056290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -714,22 +714,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 983400007a230000f20a0000501b0000be2000008a0c0000fc240000581c0000c41a0000bc200000682500002c120000b20900008a2e0000903100002a2e0000fa0c00003a2f0000362f00007258fcffe20c0000880d0000ce09000080090000f20c0000720a0000da340000160d0000d6340000f60c00006c0a0000480d0000f0330000120e0000f209000004cffeffa60a000094090000c80b0000b20a0000ea090000b40a00004c0a0000860d0000960900008e0a00006e0c0000ae090000d40a00009a0e00007e0d00007e0a00008c0d0000980d0000ea050000d20a0000040b0000180a0000120b00000c0b00002e0f0000ec0500000e0b0000f64700006a4a000030490000f42800007c280000cc39000054320000a232000002330000263300006c330000122c00004e9e0000042b0000f82a0000c6290000223b000000000000b22a000006380000fc2b00004c300000083f0000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: 983400007a230000f20a0000501b0000be2000008a0c0000fc240000581c0000c41a0000bc200000682500002c120000b20900008a2e0000903100002a2e0000fa0c00003a2f0000362f00007258fcffe20c0000880d0000ce09000080090000f20c0000720a0000da340000160d0000d6340000f60c00006c0a0000480d0000f0330000120e0000f209000004cffeffa60a000094090000c80b0000b20a0000ea090000b40a00004c0a0000860d0000960900008e0a00006e0c0000ae090000d40a00009a0e00007e0d00007e0a00008c0d0000980d0000ea050000d20a0000040b0000180a0000120b00000c0b00002e0f0000ec0500000e0b0000f64700006a4a000030490000f42800007c280000cc39000054320000a232000002330000263300006c330000122c00004e9e0000042b0000f82a0000c6290000223b000000000000b22a000006380000fc2b00004c300000083f00008a2c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: ObjectArt
+      m_OriginalName: ObjectArt
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 11410
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
