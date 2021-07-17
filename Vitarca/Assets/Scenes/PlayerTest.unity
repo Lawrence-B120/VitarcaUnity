@@ -273,7 +273,8 @@ MonoBehaviour:
   physMatHF: {fileID: 6200000, guid: 8dd73ab4e2a0b864eb4e48368e2efc78, type: 2}
   physMatLF: {fileID: 6200000, guid: 2ed2148a34c2ac048ba1dc45444156dd, type: 2}
   runSpeedMult: 10
-  maxVelocity: {x: 5, y: 400}
+  jumpMult: 5
+  maxVelocity: {x: 5, y: 10}
 --- !u!1 &583848022
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +345,7 @@ GameObject:
   - component: {fileID: 875883849}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
