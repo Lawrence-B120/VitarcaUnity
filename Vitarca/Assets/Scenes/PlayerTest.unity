@@ -270,7 +270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3512a2cf860ba04d8156bec253fedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeedMult: 5
+  physMatHF: {fileID: 6200000, guid: 8dd73ab4e2a0b864eb4e48368e2efc78, type: 2}
+  physMatLF: {fileID: 6200000, guid: 2ed2148a34c2ac048ba1dc45444156dd, type: 2}
+  runSpeedMult: 10
   maxVelocity: {x: 5, y: 400}
 --- !u!1 &583848022
 GameObject:
