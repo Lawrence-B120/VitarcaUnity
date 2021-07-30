@@ -8,12 +8,12 @@ public class Player : MonoBehaviour
         Rolling
     }
 
-    [SerializeField] private PhysicsMaterial2D physMatHF, physMatLF; //*High and low friction physics materials*//
-    [SerializeField] private float runSpeedMult, jumpMult;
-    [SerializeField] private Vector2 maxVelocity;
+    [SerializeField] private PhysicsMaterial2D physMatHF, physMatLF, physMatR; //*High and low friction physics materials + material for rolling*//
+    [SerializeField] private float runSpeedMult, jumpMult, rotMult, maxRot;
+    [SerializeField] private Vector2 maxVel;
     private State state = State.Walking;
     private Rigidbody2D rb;
-    private bool grounded, jumping;
+    private bool grounded;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,6 +25,24 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.tag == "Ground")
             grounded = false;
+    }
+
+    private void setstate(State s)
+    {
+        state = s;
+
+        if (state == State.Walking)
+        {
+            transform.Find("Legs").gameObject.SetActive(true);
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+            rb.freezeRotation = true;
+        }
+        else
+        {
+            transform.Find("Legs").gameObject.SetActive(false);
+            rb.freezeRotation = false;
+            rb.sharedMaterial = physMatR;
+        }
     }
 
     private void horizontalMove()
@@ -40,7 +58,20 @@ public class Player : MonoBehaviour
         }
         else
         {
-            //Rollin stuff later
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                if (rb.angularVelocity > -maxRot)
+                    rb.AddTorque(-rotMult * Time.deltaTime, ForceMode2D.Impulse);
+                if (rb.velocity.x < maxVel.x)
+                    rb.AddForce(new Vector2(1, 0) * runSpeedMult * Time.deltaTime, ForceMode2D.Impulse);
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                if (rb.angularVelocity < maxRot)
+                    rb.AddTorque(rotMult * Time.deltaTime, ForceMode2D.Impulse);
+                if (rb.velocity.x > -maxVel.x)
+                    rb.AddForce(new Vector2(-1, 0) * runSpeedMult * Time.deltaTime, ForceMode2D.Impulse);
+            }
         }
     }
 
@@ -48,7 +79,6 @@ public class Player : MonoBehaviour
     {
         if (grounded)
         {
-            Debug.Log(grounded);     
             rb.position = new Vector2(rb.position.x, rb.position.y + 0.05f);
             rb.velocity = new Vector2(rb.velocity.x, jumpMult);
             grounded = false;
@@ -62,12 +92,22 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (state == State.Walking)
+        {       
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                jump();
+            else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+                setstate(State.Rolling);
+        }
+        else
+        {
+            if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
+                setstate(State.Walking);
+        }
+
         horizontalMove();
 
-        if (Input.GetAxis("Vertical") == 1)
-            jump();
-
-        rb.velocity = new Vector2(Mathf.Min(Mathf.Abs(rb.velocity.x), maxVelocity.x) * Mathf.Sign(rb.velocity.x), 
-            Mathf.Min(Mathf.Abs(rb.velocity.y), maxVelocity.y) * Mathf.Sign(rb.velocity.y));
+        rb.velocity = new Vector2(Mathf.Min(Mathf.Abs(rb.velocity.x), maxVel.x) * Mathf.Sign(rb.velocity.x), 
+            Mathf.Min(Mathf.Abs(rb.velocity.y), maxVel.y) * Mathf.Sign(rb.velocity.y));
     }
 }

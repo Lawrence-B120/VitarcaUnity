@@ -271,10 +271,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physMatHF: {fileID: 6200000, guid: 8dd73ab4e2a0b864eb4e48368e2efc78, type: 2}
-  physMatLF: {fileID: 6200000, guid: 2ed2148a34c2ac048ba1dc45444156dd, type: 2}
+  physMatLF: {fileID: 6200000, guid: 4ff5dca42be92f24ca2e1e1ec4eb24cf, type: 2}
+  physMatR: {fileID: 6200000, guid: 66f705a5481b1334aba4cebef11dae37, type: 2}
   runSpeedMult: 10
   jumpMult: 5
-  maxVelocity: {x: 5, y: 10}
+  rotMult: 5
+  maxRot: 500
+  maxVel: {x: 5, y: 10}
 --- !u!1 &583848022
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +457,7 @@ GameObject:
   - component: {fileID: 1578016160}
   - component: {fileID: 1578016159}
   - component: {fileID: 1578016158}
+  - component: {fileID: 1578016161}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -526,3 +530,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1578016161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578016157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
